@@ -1,0 +1,10 @@
+<%= form_with(url: new_post_comment_path(post_id)) do |form| %>
+
+  <div>
+    <%= form.label :content, "Add a Comment:" %>
+    <%= form.text_field :content %>
+    <%= form.hidden_field :post_id, value: post_id %>
+    <%= form.submit %>
+  </div>
+  
+<% end %>
