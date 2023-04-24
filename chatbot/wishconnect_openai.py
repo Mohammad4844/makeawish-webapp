@@ -1,7 +1,7 @@
 import os
 import sys
 import openai
-openai.api_key = "API_KEY"
+openai.api_key = "MY_API_KEY"
 
 os.system("python3 -m openai tools fine_tunes.prepare_data -f 'data.jsonl' ")
 
