@@ -8,7 +8,8 @@ class ConnectController < ApplicationController
     prompt = params[:prompt]
     session[:message_history] ||= [] # Initialize message history if it doesn't exist
     session[:message_history] << prompt
-    session[:message_history] << "response"
+    api_response = `python3 chatbot/wishconnect_openai.py "#{prompt}"`
+    session[:message_history] << api_response
 
     redirect_to "/connect/chatbot"
   end

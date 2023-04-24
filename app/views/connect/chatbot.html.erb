@@ -9,9 +9,9 @@
         <div class="input-group flex-nowrap w-75 mb-3" style="float: <%= i.even? ? "left" : "right" %>">
           <% if i.even? %>
             <span class="input-group-text bg-primary text-white" id="addon-wrapping">WishConnect</span>
-            <textarea style="pointer-events: none; resize: none;" type="text" class="form-control" rows="<%= msg.length / 75 + 1%>" readonly><%= msg %></textarea>
+            <textarea style="pointer-events: none; resize: none; overflow:hidden" type="text" class="form-control" rows="<%= msg.length / 75+ 1%>" readonly><%= msg %></textarea>
           <% else %>
-            <textarea style="pointer-events: none; resize: none;" type="text" class="form-control" rows="<%= msg.length / 75 + 1%>" readonly><%= msg %></textarea>
+            <textarea style="pointer-events: none; resize: none; overflow:hidden" type="text" class="form-control" rows="<%= msg.length / 75 + 1%>" readonly><%= msg %></textarea>
             <span class="input-group-text bg-dark text-white" id="addon-wrapping">Me</span>
           <% end %>
         </div>
