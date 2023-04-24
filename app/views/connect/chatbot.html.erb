@@ -1,0 +1,31 @@
+<br>
+<h1>Wish Connect</h1>
+<br>
+
+<div class="card w-75 border rounded-4 mb-3 p-3 d-flex flex-column align-items-center justify-content-start" >
+  <ul class="list-group list-group-flush w-100 border-0">
+    <% session[:message_history].each_with_index do |msg, i| %>
+      <li class="list-group-item border-0 ">
+        <div class="input-group flex-nowrap w-75 mb-3" style="float: <%= i.even? ? "left" : "right" %>">
+          <% if i.even? %>
+            <span class="input-group-text bg-primary text-white" id="addon-wrapping">WishConnect</span>
+            <textarea style="pointer-events: none; resize: none; overflow:hidden" type="text" class="form-control" rows="<%= msg.length / 75+ 1%>" readonly><%= msg %></textarea>
+          <% else %>
+            <textarea style="pointer-events: none; resize: none; overflow:hidden" type="text" class="form-control" rows="<%= msg.length / 75 + 1%>" readonly><%= msg %></textarea>
+            <span class="input-group-text bg-dark text-white" id="addon-wrapping">Me</span>
+          <% end %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+  <br>
+  <%= form_with(url: connect_call_chat_api_path, class: "input-group mb-3 w-75 border-0", style: "float: center") do |form| %>
+    <%= form.text_field :prompt, class: "form-control ", placeholder: "Ask WishConnect" %>
+    <%= form.submit "⇨", class: "btn btn-success" %>
+  <% end %>
+</div>
+
+<%= link_to "New Chat", connect_reset_message_log_path, class: "btn btn-info mb-3" %>
+
+
+

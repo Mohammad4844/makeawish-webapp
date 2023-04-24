@@ -6,6 +6,10 @@ Rails.application.routes.draw do
 
   post '/posts/:id/comment/new', to: 'comments#create'
 
+  get 'connect/chatbot', to: 'connect#chatbot'
+  post 'connect/call_chat_api', to: 'connect#call_chat_api'
+  get 'connect/reset_message_log', to: 'connect#reset_message_log'
+
   # Defines the root path route ("/")
   root "home#index"
 
