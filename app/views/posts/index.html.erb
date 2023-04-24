@@ -1,20 +1,27 @@
+
 <p style="color: green"><%= notice %></p>
 
-<h1>Posts</h1>
+<br>
+<h1 class="mb-3">Community Discussions</h1>
+<br>
 
-<div id="posts">
-  <% @posts.each do |post| %>
-    <%= render post %>
-    <% if post.comments.any? %>
-    <p>Comments:</p>
-    <ul>
-      <% post.comments.each do |comment| %>
-        <li><%= comment.content %></li>
-      <% end%>
-    </ul>
-    <% end %>
-    <%= render partial: 'comments/form', locals: { post_id: post.id } %>
+<%= link_to "Start a New Discussion", new_post_path, class: "btn btn-primary mb-3" %>
+
+<br>
+
+<div id="posts" class="w-100 d-flex flex-column align-items-center justify-content-start">
+  <% @posts.reverse_order.each do |post| %>
+    <div class="card w-75 mb-3" >
+      <%= render post %>
+      <ul class="list-group list-group-flush">
+        <% post.comments.each do |comment| %>
+          <li class="list-group-item text-secondary"><%= comment.content %></li>
+        <% end %>
+        <li class="list-group-item text-secondary"><%= render partial: 'comments/form', locals: { post_id: post.id } %></li>
+      </ul>
+    </div>
+    <br>
   <% end %>
 </div>
 
-<%= link_to "New post", new_post_path %>
+

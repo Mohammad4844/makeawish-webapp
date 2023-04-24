@@ -4,7 +4,6 @@ class CommentsController < ApplicationController
     @comment = @post.comments.build(comment_params)
     @comment.save
 
-    @posts = Post.all
     redirect_to posts_path
   end
 

@@ -1,12 +1,8 @@
-<div id="<%= dom_id post %>">
-  <p>
-    <strong>Title:</strong>
-    <%= post.title %>
-  </p>
-
-  <p>
-    <strong>Content:</strong>
-    <%= post.content %>
-  </p>
-
+<div id="<%= dom_id post %>" class="card-body">
+  <h5 class="card-title"><%= post.title %></h5>
+    <h6 class="card-subtitle mb-2 text-body-secondary d-flex flex-row justify-content-between">
+      <span>@username</span>
+      <span><%= post.created_at.in_time_zone('Eastern Time (US & Canada)').strftime("%B %d, %Y at %I:%M %p") %></span>
+    </h6>
+  <p class="card-text"><%= post.content %></p>
 </div>

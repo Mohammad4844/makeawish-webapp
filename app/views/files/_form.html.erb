@@ -1,4 +1,15 @@
-<%= form_with(url: new_file_path, local: true, multipart: true) do |form| %>
-  <%= form.file_field :file %>
-  <%= form.submit "Upload" %>
+<%= form_with(url: new_file_path, local: true, multipart: true, class: "mb-3") do |form| %>
+  <div class="mb-3">
+    <%= form.label :wish_file, "Make-A-Wish Form", class: "form-label" %>
+    <%= form.file_field :wish_file, class: "form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :birthcert_file, "Photocopies of Birth Certificates", class: "form-label" %>
+    <%= form.file_field :birthcert_file, class: "form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :photo_file, "Photo", class: "form-label" %>
+    <%= form.file_field :phot_file, class: "form-control" %>
+  </div>
+  <div class="mb-3"><%= form.submit "Upload", class: "btn btn-primary"  %></div>
 <% end %>
