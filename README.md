@@ -11,7 +11,7 @@ This is the github repository for Team 15's proposed solution for the Morgan Sta
 - [Sparsh N](https://github.com/Sparsh-N)
 - [Divyalakshmi Varadha Rajan Prem Sudha](https://github.com/Divyatech-hub)
 
-## Make-A-Wish (GA) Prblem Statement
+## Make-A-Wish (GA) Problem Statement
 - Creating a real-time communication platform for families across Georgia
 - Promoting to families not in the program so every eligible child can make a wish
 - Connecting families to support resources in their area
